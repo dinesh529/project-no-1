@@ -9,14 +9,16 @@ def function(txt, pat, n, m):
             return i
     return -1
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET", "POST"])
 def home():
+
     result = None
     time_taken = None
 
-    if request.method == 'POST':
-        txt = request.form['txt']
-        pat = request.form['pat']
+    if request.method == "POST":
+
+        txt = request.form["txt"]
+        pat = request.form["pat"]
 
         stime = time.time()
 
@@ -26,9 +28,10 @@ def home():
 
         time_taken = etime - stime
 
-    return render_template('index.html',
-                           result=result,
-                           time_taken=time_taken)
+    return render_template(
+        "index.html",
+        result=result,
+        time_taken=time_taken
+    )
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+app = app
