@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pattern Search</title>
+</head>
+<body>
+
+<h2>Pattern Searching</h2>
+
+<form method="POST">
+
+    Enter Text:<br>
+    <input type="text" name="txt"><br><br>
+
+    Enter Pattern:<br>
+    <input type="text" name="pat"><br><br>
+
+    <input type="submit" value="Search">
+
+</form>
+
+{% if result is not none %}
+
+<h3>Result</h3>
+
+<p>Pattern Found at Index : {{ result }}</p>
+
+<p>Execution Time : {{ time_taken }} seconds</p>
+
+{% endif %}
+
+</body>
+</html>
